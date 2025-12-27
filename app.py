@@ -10,13 +10,8 @@ Original file is located at
 import numpy as np
 import pandas as pd
 
-pricing = pd.read_csv("/content/drive/MyDrive/Pricing_Data_CLEAN.csv")
-ads = pd.read_csv("/content/drive/MyDrive/Cleaned_Ads_Data.csv")
-competitor = pd.read_csv("/content/drive/MyDrive/clean_competitor_data.csv")
-inventory = pd.read_csv("/content/drive/MyDrive/clean_Inventory_data.csv")
-returns = pd.read_csv("/content/drive/MyDrive/clean_Returns_data.csv")
-HSales = pd.read_csv ('/content/drive/MyDrive/HSales.csv')
-df = pd.read_csv("/content/drive/MyDrive/merged_pricing_dataset.csv")
+df = pd.read_csv("merged_pricing_dataset.csv")
+
 
 df.head()
 
