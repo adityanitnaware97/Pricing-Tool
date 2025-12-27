@@ -22,7 +22,6 @@ df.head()
 
 df.columns
 
-!pip install streamlit cloudflared
 
 # This cell is no longer needed as app.py now loads data directly.
 # import pandas as pd
@@ -253,4 +252,3 @@ df.columns
 # st.plotly_chart(fig3, use_container_width=True)
 #
 
-!streamlit run app.py &>/content/logs.txt & npx cloudflared tunnel --url http://localhost:8501
