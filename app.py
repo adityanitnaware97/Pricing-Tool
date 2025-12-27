@@ -27,8 +27,31 @@ st.title("📦 Pricing Recommendation & Decision Support Tool")
 # ======================
 # DATA PREVIEW
 # ======================
-with st.expander("Preview Dataset"):
-    st.dataframe(df.head(20), use_container_width=True)
+st.subheader("📊 SKU Overview (All Products)")
+
+sku_summary = (
+    df.groupby("SKU", as_index=False)
+    .agg(
+        Product=("Product_description", "first"),
+        Current_Price=("Current_Price", "mean"),
+        Total_Cost=("Total_Cost", "mean"),
+        Avg_Competitor_Price=("Avg_Competitor_Price", "mean"),
+        Days_of_Supply=("days_of_supply", "mean"),
+        Current_Margin=("Current_Gross_Margin_%", "mean")
+    )
+)
+
+with st.expander("🔍 View SKU Summary Table"):
+    st.dataframe(
+        sku_summary.style.format({
+            "Current_Price": "${:,.2f}",
+            "Total_Cost": "${:,.2f}",
+            "Avg_Competitor_Price": "${:,.2f}",
+            "Current_Margin": "{:.1f}%"
+        }),
+        use_container_width=True
+    )
+
 
 # ======================
 # SKU SELECTOR
