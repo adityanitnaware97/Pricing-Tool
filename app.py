@@ -37,7 +37,7 @@ sku_summary = (
         Total_Cost=("Total_Cost", "mean"),
         Avg_Competitor_Price=("Avg_Competitor_Price", "mean"),
         Days_of_Supply=("days_of_supply", "mean"),
-        Current_Margin=("Current_Gross_Margin_%", "mean")
+        current_gross_margin = row["Current_Gross_Margin_%"] / 100
     )
 )
 
