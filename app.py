@@ -41,15 +41,6 @@ sku_summary = (
     )
 )
 
-# SKU selection
-sku = st.selectbox("Select SKU", sorted(df["SKU"].unique()))
-sku_df = df[df["SKU"] == sku].copy()
-
-# Get latest row for selected SKU
-row = sku_df.sort_values("Date").iloc[-1]
-
-current_gross_margin = row["Current_Gross_Margin_%"] / 100
-
 with st.expander("🔍 View SKU Summary Table"):
     st.dataframe(
         sku_summary.style.format({
